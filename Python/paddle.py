@@ -12,6 +12,19 @@ class Paddle(pygame.sprite.Sprite):
         self.image.set_colorkey(WHITE)
 
         pygame.draw.rect(self.image, color, [0, 0, width, height])
-
         self.rect = self.image.get_rect()
+    
+    def MoveUp(self, pixels):
+        self.rect.y -= pixels
+
+        if self.rect.y <0:
+            self.rect.y = 0
+    
+    def MoveDown(self, pixels):
+        self.rect.y += pixels
+
+        if self.rect.y >400:
+            self.rect.y = 400
+            
+
         

@@ -1,5 +1,9 @@
+import sys
 import pygame
+from pygame.locals import QUIT
+
 from paddle import Paddle
+
 pygame.init()
 
 BLACK = (0,0,0)
@@ -40,7 +44,17 @@ while carryOn:
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_x:
                 carryOn = False
-      
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_w]:
+        paddleA.MoveUp(5)
+    if keys[pygame.K_s]:
+        paddleA.MoveDown(5)
+    if keys[pygame.K_UP]:
+        paddleB.MoveUp(5)
+    if keys[pygame.K_DOWN]:
+        paddleB.MoveDown(5)
+    
     all_sprites_list.update()
 
     screen.fill(BLACK)
@@ -48,7 +62,6 @@ while carryOn:
     all_sprites_list.draw(screen)
 
     pygame.display.flip()
-
     clock.tick(60)
 
 pygame.quit()
