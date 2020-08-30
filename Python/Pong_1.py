@@ -50,10 +50,19 @@ while carryOn:
         paddleA.MoveUp(5)
     if keys[pygame.K_s]:
         paddleA.MoveDown(5)
+    if keys[pygame.K_a]:
+        paddleA.MoveLeft(5,0)
+    if keys[pygame.K_d]:
+        paddleA.MoveRight(5, 340)
     if keys[pygame.K_UP]:
         paddleB.MoveUp(5)
     if keys[pygame.K_DOWN]:
         paddleB.MoveDown(5)
+    if keys[pygame.K_LEFT]:
+        paddleB.MoveLeft(5,349)
+    if keys[pygame.K_RIGHT]:
+        paddleB.MoveRight(5,690)
+
     
     all_sprites_list.update()
 
